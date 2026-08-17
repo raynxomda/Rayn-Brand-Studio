@@ -1,42 +1,16 @@
-import { Check, Copy, Mail, MessageCircle, ArrowUpRight } from 'lucide-react';
-import { motion, useReducedMotion } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { Mail, MessageCircle, ArrowUpRight } from 'lucide-react';
 import { Magnetic } from './Magnetic';
 import { MotionReveal } from './MotionReveal';
 
 const email = 'collabrayn@proton.me';
 const socials = [
-  { label: 'YouTube', href: 'https://youtube.com' },
-  { label: 'Instagram', href: 'https://instagram.com' },
-  { label: 'TikTok', href: 'https://tiktok.com' },
-  { label: 'X', href: 'https://x.com' },
+  { label: 'YouTube', href: 'http://youtube.com/@raynxomda' },
+  { label: 'Instagram', href: 'https://www.instagram.com/raynxomda?igsh=a21qOWgxZTNrZ3J2' },
+  { label: 'TikTok', href: 'http://tiktok.com/@raynxomda' },
+  { label: 'Community AI', href: 'http://t.me/rayncommunity' },
 ];
 
 export function ContactBlock() {
-  const [copied, setCopied] = useState(false);
-  const reduceMotion = useReducedMotion();
-  const timeoutRef = useRef<number | null>(null);
-
-  useEffect(() => () => {
-    if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
-  }, []);
-
-  const copyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText(email);
-    } catch {
-      const input = document.createElement('textarea');
-      input.value = email;
-      document.body.appendChild(input);
-      input.select();
-      document.execCommand('copy');
-      input.remove();
-    }
-    setCopied(true);
-    if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
-    timeoutRef.current = window.setTimeout(() => setCopied(false), 1500);
-  };
-
   return (
     <section className="hex-texture px-5 pb-24 pt-10 md:px-10 md:pb-36 lg:px-[8vw]">
       <div className="mx-auto max-w-[1400px]">
@@ -56,25 +30,17 @@ export function ContactBlock() {
                   <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" strokeWidth={1.4} />
                 </a>
               </Magnetic>
-              <div className="flex items-center justify-between border border-white/20 px-5 py-4">
-                <Magnetic strength={0.09}>
-                  <a href={`mailto:${email}`} data-testid="link-contact-email" className="flex items-center gap-3 text-[.66rem] font-semibold uppercase tracking-[.13em] text-[#F4F1EA] no-underline transition-colors hover:text-[#E8862E]"><Mail className="size-4" strokeWidth={1.4} /> Email me</a>
-                </Magnetic>
-                <Magnetic strength={0.12}>
-                  <button type="button" onClick={copyEmail} aria-label="Copy email address" data-testid="button-copy-email" className="flex items-center gap-2 text-[.62rem] font-semibold uppercase tracking-[.13em] text-[#8A8A8A] transition-colors hover:text-[#E8862E]">
-                    <motion.span
-                      key={copied ? 'copied' : 'copy'}
-                      initial={reduceMotion ? false : { opacity: 0, y: 5, scale: 0.96 }}
-                      animate={{ opacity: 1, y: 0, scale: copied && !reduceMotion ? [1, 1.05, 1] : 1 }}
-                      transition={{ duration: reduceMotion ? 0.01 : 0.3 }}
-                    >
-                      {copied ? 'Copied ✓' : 'Copy email'}
-                    </motion.span>
-                    {copied ? <Check className="size-4 text-[#E8862E]" strokeWidth={1.5} /> : <Copy className="size-4" strokeWidth={1.4} />}
-                  </button>
-                </Magnetic>
-              </div>
-              <span className={`text-right text-[.58rem] uppercase tracking-[.13em] text-[#E8862E] transition-opacity ${copied ? 'opacity-100' : 'opacity-0'}`} aria-live="polite" data-testid="status-email-copied">{copied ? 'Email copied' : 'Email ready to copy'}</span>
+              <Magnetic strength={0.09}>
+                <a
+                  href={`mailto:${email}`}
+                  aria-label="Send RAYN an email"
+                  data-testid="link-contact-email"
+                  className="group flex items-center justify-between border border-white/20 px-5 py-4 text-[.66rem] font-semibold uppercase tracking-[.13em] text-[#F4F1EA] no-underline transition-colors hover:border-[#E8862E] hover:text-[#E8862E]"
+                >
+                  <span className="flex items-center gap-3"><Mail className="size-4" strokeWidth={1.4} /> Email me</span>
+                  <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" strokeWidth={1.4} />
+                </a>
+              </Magnetic>
             </div>
           </MotionReveal>
         </div>

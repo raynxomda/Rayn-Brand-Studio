@@ -1,10 +1,10 @@
 import { Link } from 'wouter';
 
 const socials = [
-  { label: 'YouTube', href: 'https://youtube.com' },
-  { label: 'Instagram', href: 'https://instagram.com' },
-  { label: 'TikTok', href: 'https://tiktok.com' },
-  { label: 'X', href: 'https://x.com' },
+  { label: 'YouTube', href: 'http://youtube.com/@raynxomda' },
+  { label: 'Instagram', href: 'https://www.instagram.com/raynxomda?igsh=a21qOWgxZTNrZ3J2' },
+  { label: 'TikTok', href: 'http://tiktok.com/@raynxomda' },
+  { label: 'Community AI', href: 'http://t.me/rayncommunity' },
 ];
 
 export function Footer() {
@@ -18,8 +18,7 @@ export function Footer() {
           ))}
         </div>
         <div className="md:text-right">
-          <a href="mailto:collabrayn@proton.me" data-testid="link-footer-email" className="text-[.68rem] text-[#F4F1EA] no-underline transition-colors hover:text-[#E8862E]">collabrayn@proton.me</a>
-          <p className="mt-2 text-[.58rem] uppercase tracking-[.14em] text-[#606060]">© 2026 RAYN Studio</p>
+          <p className="text-[.58rem] uppercase tracking-[.14em] text-[#606060]">© 2026 RAYN Studio</p>
         </div>
       </div>
     </footer>
