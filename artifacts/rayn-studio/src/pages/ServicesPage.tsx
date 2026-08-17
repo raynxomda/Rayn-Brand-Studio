@@ -1,4 +1,5 @@
 import { ServiceRow } from '@/components/rayn/ServiceRow';
+import { MotionReveal } from '@/components/rayn/MotionReveal';
 import { SiteShell } from '@/components/rayn/SiteShell';
 
 const services = [
@@ -26,16 +27,16 @@ export default function ServicesPage() {
   return (
     <SiteShell>
       <section className="page-intro hex-texture">
-        <div className="reveal mx-auto max-w-[1400px]">
+        <MotionReveal className="mx-auto max-w-[1400px]">
           <span className="eyebrow">Capabilities / 03</span>
           <h1>Useful<br /><span className="text-[#E8862E]">intelligence.</span></h1>
           <p>Three ways to turn the strange, fast-moving world of AI into an advantage people can actually feel.</p>
-        </div>
+        </MotionReveal>
       </section>
       <section className="px-5 pb-24 md:px-10 md:pb-40 lg:px-[8vw]">
         <div className="mx-auto max-w-[1400px]">
           {services.map((service) => <ServiceRow key={service.number} {...service} />)}
-          <p className="mt-8 text-right text-[.59rem] uppercase tracking-[.15em] text-[#606060]">Select a service to unfold</p>
+          <MotionReveal className="mt-8 text-right text-[.59rem] uppercase tracking-[.15em] text-[#606060]" delay={0.1}>Select a service to unfold</MotionReveal>
         </div>
       </section>
     </SiteShell>

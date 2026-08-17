@@ -83,6 +83,11 @@ a {
   background: #0b0b0c;
 }
 
+.page-transition {
+  min-height: 100dvh;
+  background: #0b0b0c;
+}
+
 .hex-texture {
   position: relative;
 }
@@ -181,5 +186,8 @@ a {
   *, *::before, *::after {
     animation-duration: .01ms !important;
     transition-duration: .01ms !important;
+  }
+  .page-transition {
+    transform: none !important;
   }
 }
