@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "RAYN — AI Content Creator"
+description = "A premium multi-page personal brand website for RAYN, an AI content creator and consultant, with cinematic media, editorial service presentation, and direct contact pathways."
+version = "1.0.0"
+id = "artifacts/rayn-studio"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22436
+
+[services.development]
+run = "pnpm --filter @workspace/rayn-studio run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/rayn-studio", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/rayn-studio/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22436"
+BASE_PATH = "/"
