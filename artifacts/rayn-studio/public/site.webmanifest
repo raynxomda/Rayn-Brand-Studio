@@ -1,7 +1,7 @@
 {
   "name": "RAYN — AI Content Creator",
   "short_name": "RAYN",
-  "description": "RAYN — AI content creator and consultant.",
+  "description": "Generate on-brand content and automate creative workflows with RAYN.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0B0B0C",

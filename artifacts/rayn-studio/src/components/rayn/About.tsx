@@ -16,7 +16,7 @@ export function About() {
               Human<br /><span className="text-[#8A8A8A]">signal.</span>
             </h2>
             <p className="mt-9 max-w-[300px] text-[.78rem] leading-[1.85] text-[#A5A09A]">
-              RAYN is an AI content creator and consultant translating complex intelligence into clear, useful, unforgettable work.
+              RAYN is an AI content creation studio that turns ideas into clear, engaging content while automating the repetitive work behind every creative workflow.
             </p>
           </MotionReveal>
           <MotionReveal className="relative" delay={0.08}>

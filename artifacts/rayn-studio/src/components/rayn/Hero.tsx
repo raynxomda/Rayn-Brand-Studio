@@ -54,11 +54,11 @@ export function Hero() {
             transition={reduceMotion ? { duration: 0.01 } : { duration: 0.85, delay: 0.58, ease: [0.22, 1, 0.36, 1] }}
           >
             <p className="max-w-[580px] font-display text-[clamp(1.65rem,3.3vw,3.15rem)] leading-[.95] tracking-[-.03em] text-[#F4F1EA]">
-              Exploring the frontier of <em className="text-[#E8862E]">Artificial Intelligence</em>
+              Turn ideas into <em className="text-[#E8862E]">content that moves.</em>
             </p>
             <div className="flex flex-col items-start gap-5 md:items-end">
               <p className="max-w-[250px] text-left text-[.72rem] leading-[1.65] text-[#A5A09A] md:text-right">
-                AI content, systems and visual stories for people building what comes next.
+                Generate content, automate creative workflows, and bring every idea to life with more focus.
               </p>
               <Magnetic strength={0.12}>
                 <Link href="/services" data-testid="link-hero-services" className="group inline-flex items-center gap-3 text-[.65rem] font-semibold uppercase tracking-[.16em] text-[#F4F1EA] no-underline">
