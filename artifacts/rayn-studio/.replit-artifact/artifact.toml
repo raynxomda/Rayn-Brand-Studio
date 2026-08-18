@@ -17,7 +17,7 @@ run = "pnpm --filter @workspace/rayn-studio run dev"
 [services.production]
 build = [ "pnpm", "--filter", "@workspace/rayn-studio", "run", "build" ]
 serve = "static"
-publicDir = "artifacts/rayn-studio/dist/public"
+publicDir = "artifacts/rayn-studio/dist"
 
 [[services.production.rewrites]]
 from = "/*"

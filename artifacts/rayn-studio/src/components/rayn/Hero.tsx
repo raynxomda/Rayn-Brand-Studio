@@ -1,8 +1,9 @@
 import { ArrowDown, ArrowUpRight } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Link } from 'wouter';
-import heroVideo from '@assets/موشن_202608170119_1786927569290.mp4';
 import { Magnetic } from './Magnetic';
+
+const heroVideo = `${import.meta.env.BASE_URL}assets/rayn-hero-motion.mp4`;
 
 export function Hero() {
   const reduceMotion = useReducedMotion();
